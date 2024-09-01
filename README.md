@@ -1,4 +1,3 @@
-```markdown
 # My Dotfiles
 
 This repository contains my personal configuration files (dotfiles) for setting up a minimal shell environment. The configurations are tailored for a clean and efficient shell experience, with Zsh leveraging the `powerlevel9k` theme for a visually appealing and informative prompt.
