@@ -1,0 +1,37 @@
+[core]
+	attributesfile = ~/.gitattributes
+	pager = delta
+
+[user]
+	email = 
+	name = 
+
+[credential]
+	helper = cache --timeout=3600
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+
+[interactive]
+	diffFilter = delta --color-only
+
+[pull]
+	rebase = true
+[diff]
+	colorMoved = default
+[diff "image"]
+	command = compare $2 $1 png:- | montage -geometry +4+4 $2 - $1 png:- | display -title \"$1\" -
+[merge]
+	conflictstyle = diff3
+	ff = no
+	commit = no
+
+[delta]
+	navigate = true
+	light = false
+	line-numbers = true
