@@ -1,5 +1,3 @@
-Sure! Here’s the raw markdown for the updated `README.md`:
-
 ```markdown
 # My Dotfiles
 
