@@ -1,4 +1,4 @@
-# My Dotfiles
+# Linux Bare Minimum Dotfiles
 
 This repository contains my personal configuration files (dotfiles) for setting up a minimal shell environment. The configurations are tailored for a clean and efficient shell experience, with Zsh leveraging the `powerlevel9k` theme for a visually appealing and informative prompt.
 
@@ -11,6 +11,10 @@ This repository includes:
 - **Zsh Configuration**:
   - `.zshrc`: Minimal Zsh configuration using the `powerlevel9k` theme for prompt customization.
   - `.p10k.zsh`: Configuration file for `powerlevel9k` (or `powerlevel10k`).
+- **Vim Configuration**:
+  - `.vimrc`: Basic Vim configuration for a streamlined editing experience.
+- **Git Configuration**:
+  - `.gitconfig`: Global Git configuration for aliases, user information, and other settings.
 
 ## Directory Structure
 
@@ -19,6 +23,8 @@ dotfiles/
 ├── .bashrc         # Minimal Bash configuration
 ├── .zshrc          # Minimal Zsh configuration with powerlevel9k
 ├── .p10k.zsh       # powerlevel9k/powerlevel10k theme configuration
+├── .vimrc          # Basic Vim configuration
+├── .gitconfig      # Global Git configuration
 └── README.md       # This file
 ```
 
@@ -37,6 +43,18 @@ dotfiles/
 - **Prompt Customization**: A visually appealing prompt with useful information, including git status, current directory, and user info.
 - **Path Setup**: Ensures the correct paths are added to `$PATH` for easy command execution.
 
+### Vim Configuration (`.vimrc`)
+
+- **Syntax Highlighting**: Enables syntax highlighting for a better coding experience.
+- **Line Numbers**: Shows line numbers for easy navigation.
+- **Basic Mappings**: Includes basic mappings for convenience (e.g., easier window navigation).
+
+### Git Configuration (`.gitconfig`)
+
+- **User Information**: Set up your global user name and email for commits.
+- **Aliases**: Handy Git command shortcuts (e.g., `git st` for `git status`).
+- **Color Customization**: Enables color output for Git commands for better readability.
+
 ## Installation
 
 To set up these dotfiles on your system, follow these steps:
@@ -49,7 +67,7 @@ git clone https://github.com/your-username/dotfiles.git ~/dotfiles
 
 ### 2. Symlink the Dotfiles
 
-Symlink the `.bashrc`, `.zshrc`, and `.p10k.zsh` files to your home directory depending on the shell you are using:
+Symlink the relevant dotfiles to your home directory:
 
 ```bash
 # For Bash
@@ -58,6 +76,12 @@ ln -sf ~/dotfiles/.bashrc ~/.bashrc
 # For Zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
+
+# For Vim
+ln -sf ~/dotfiles/.vimrc ~/.vimrc
+
+# For Git
+ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ```
 
 ### 3. Install Powerlevel9k or Powerlevel10k
@@ -74,7 +98,7 @@ git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-m
 
 ### 4. Reload the Shell
 
-After symlinking, reload your shell to apply the new configuration:
+After symlinking, reload your shell and Vim configuration:
 
 ```bash
 # For Bash
@@ -82,6 +106,8 @@ source ~/.bashrc
 
 # For Zsh
 source ~/.zshrc
+
+# Vim configuration will be applied automatically when you start Vim
 ```
 
 ## Customization
@@ -100,11 +126,18 @@ You can edit the `.p10k.zsh` file directly to customize the prompt further.
 
 ### Adding Aliases
 
-To add your own aliases, simply edit the `.bashrc` or `.zshrc` file:
+To add your own aliases, simply edit the `.bashrc`, `.zshrc`, or `.gitconfig` file:
 
 ```bash
 # Example alias in .bashrc or .zshrc
 alias gs='git status'
+
+# Example alias in .gitconfig
+[alias]
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
 ```
 
 ## Contributing
@@ -115,3 +148,5 @@ If you have suggestions or improvements, feel free to open an issue or submit a 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 ```
+
+This `README.md` now includes `.gitconfig` and `.vimrc` in the list of dotfiles managed by your repository, and provides instructions on how to set them up.
